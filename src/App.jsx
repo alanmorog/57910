@@ -1,15 +1,11 @@
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
-import NavBar from "./components/NavBar/NavBar"
+
+import Home from "./pages/Home/Home";
+import Contact from "./pages/Contact/Contact"
 
 function App() {
   return (
     <>
-      <div className="App">
-        <NavBar></NavBar>
-      </div>
-      <ItemListContainer
-        saludo={"Bienvenidos a MusicShop - Instrumentos"}
-      />
+      <Home />
     </>
   )
 }
