@@ -1,24 +1,28 @@
 import styles from "./ItemListContainer.module.scss"
-
+import Spinner from "../Spinner/Spinner"
 import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 
-import {products} from "../../utils/MockData";
+import { getProducts } from "../../utils/MockData";
 
-function ItemListContainer({ }) {
-
-    const[items, setItems] = useState([]);
+const ItemListContainer = ({ }) => {
+    const [items, setItems] = useState([]);
 
     useEffect(() => {
-        setItems(products);
+        getProducts()
+            .then((res) => {
+                setItems(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
     }, []);
-
-
-    return (
+    return items.length === 0 ? (
+        <Spinner/>
+    ) : (
         <>
-            <ItemList itemList={items}/>
+            {<ItemList itemList={items} />}
             <div className={styles.itemListContainer}>
-                <div className="saludo"></div>
             </div>
         </>
     )

@@ -13,6 +13,7 @@ const Item = ({id, nombre, modelo , description, precio, stock, image}) => {
                 {/* <p className={styles.item__info__description}>{description}</p> */}
                 <p className={styles.item__info__precio}>${precio}</p>
                 {/* <p className={styles.item__info__stock}> Stock: {stock}</p> */}
+                <button className={styles.item__info__button}>Ver Más</button>
             </div>
         </div>
     )

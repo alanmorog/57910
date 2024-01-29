@@ -1,4 +1,4 @@
-export const products = [
+const products = [
     {
         id: 1,
         nombre: "Fender",
@@ -66,3 +66,12 @@ export const products = [
         tipo: "teclado"
     },
 ]
+
+
+export const getProducts = () => {
+    return new Promise((resolve, reject)=> {
+        setTimeout(()=>{
+            resolve(products)
+        }, 1000);
+    });
+}
