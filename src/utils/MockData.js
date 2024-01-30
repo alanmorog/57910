@@ -8,7 +8,7 @@ const products = [
         precio: 30000,
         stock: 2,
         image: "https://mariogomez.com.ar/wp-content/uploads/2023/12/fender-stratocaster-eric-johnson-s-principal-600x600.jpg",
-        tipo: "guitarra"
+        category: "guitarra"
     },
     {
         id: 2,
@@ -19,7 +19,7 @@ const products = [
         precio: 15000,
         stock: 3,
         image: "https://www.miche.com.co/cdn/shop/products/GUITARRAELECTRICAFENDERSQUIER40ANIVERSARIOSTRATOCASTEREDICIONDORADALRLSSBMOD0379410547DIAPSONENMAPLEMICHETIENDAGUI960-3_809x894.jpg?v=1667595270",
-        tipo: "guitarra"
+        category: "guitarra"
     },
     {
         id: 3,
@@ -30,7 +30,7 @@ const products = [
         precio: 15000,
         stock: 1,
         image: "https://media.guitarcenter.com/is/image/MMGS7/L54489000002000-00-720x720.jpg",
-        tipo: "guitarra"
+        category: "guitarra"
     },
     {
         id: 4,
@@ -41,7 +41,7 @@ const products = [
         precio: 15000,
         stock: 5,
         image: "https://http2.mlstatic.com/D_NQ_NP_660236-MLA31595237710_072019-O.webp",
-        tipo: "bajo"
+        category: "bajo"
     },
     {
         id: 5,
@@ -52,7 +52,7 @@ const products = [
         precio: 55000,
         stock: 3,
         image: "https://http2.mlstatic.com/D_NQ_NP_712859-MLA71414454611_082023-O.webp",
-        tipo: "bateria"
+        category: "bateria"
     },
     {
         id: 6,
@@ -63,10 +63,25 @@ const products = [
         precio: 15000,
         stock: 3,
         image: "https://http2.mlstatic.com/D_NQ_NP_659504-MLA46440505116_062021-O.webp",
-        tipo: "teclado"
+        category: "teclado"
     },
+    
 ]
 
+const categories = [
+    {
+        category: "guitarra",
+    },
+    {
+        category: "bateria",
+    },
+    {
+        category: "bajo",
+    },
+    {
+        category: "teclado",
+    }
+]
 
 export const getProducts = () => {
     return new Promise((resolve, reject)=> {
@@ -74,4 +89,12 @@ export const getProducts = () => {
             resolve(products)
         }, 1000);
     });
-}
+};
+
+export const getCategories = () => {
+    return new Promise((resolve, reject)=> {
+        setTimeout(()=>{
+            resolve(categories)
+        }, 1000);
+    });
+};

@@ -2,27 +2,41 @@ import "../CartWidget/CartWidget"
 import Logo from "../Logo/Logo"
 import CartWidget from "../CartWidget/CartWidget"
 import styles from "./NavBar.module.scss"
+import { Link } from "react-router-dom"
+import  {getProducts, getCategories}  from "../../utils/MockData"
+import React, { useEffect, useState } from "react";
 
 
 
 
-function NavBar() {
+const NavBar = () => {
+    const [categories, setCategories] = useState([])
+
+    useEffect(() => {
+        getCategories().then((categories) => {
+            setCategories(categories)
+        })
+    }, [categories])
+
     return (
-        <>
-            
-            <nav className={styles.navbar}>
-            <Logo />
-                {/* <h3>MusicShop</h3> */}
-                <div className={styles.links}>
-                    <button>Todos</button>
-                    <button>Guitarras</button>
-                    <button>Bajos</button>
-                    <button>Baterias</button>
-                    <button>Teclas</button>
-                </div>
-                <CartWidget />
-            </nav>
-        </>
+        <div className={styles.navbar}>
+            <Link to='/' className={styles.logo}>
+                <Logo/>
+            </Link>
+            <div className={styles.links}>
+                <Link to='/products' className={styles.linked}>Todos los Productos</Link>
+                {categories.map((category, index) => (
+                    <Link to={`/products/${category.category}`}
+                        key={index}
+                        className={styles.linked}>
+                        {category.category}
+                    </Link>
+                ))}
+            </div>
+            <div>
+                <CartWidget>0</CartWidget>
+            </div>
+        </div>
     )
 }
 

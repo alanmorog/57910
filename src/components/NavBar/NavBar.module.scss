@@ -1,5 +1,6 @@
 .navbar {
     display: flex;
+    margin-bottom: 50px;
 }
 
 .links {
@@ -9,7 +10,8 @@
     justify-content: space-evenly;
 }
 
-button {
+.linked {
+    text-decoration: none;
     border-radius: 8px;
     border: 1px solid transparent;
     padding: 0.6em 1.2em;
@@ -23,11 +25,25 @@ button {
     color: rgba(255, 255, 255, 0.87);
 }
 
-button:hover {
+.logo{
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid transparent;
+
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+}
+.linked:hover {
     border-color: #646cff;
 }
 
-button:focus,
-button:focus-visible {
+.linked:focus,
+.linked:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
 }
