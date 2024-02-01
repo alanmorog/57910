@@ -65,7 +65,72 @@ const products = [
         image: "https://http2.mlstatic.com/D_NQ_NP_659504-MLA46440505116_062021-O.webp",
         category: "teclado"
     },
-    
+    {
+        id: 7,
+        nombre: "Krorg",
+        modelo: "Kross WorkStation",
+        description:
+            "detalle de teclado.",
+        precio: 15500,
+        stock: 3,
+        image: "https://cdn.korg.com/ar/products/upload/eede18adc67c01de05b8c4944c280051_sp.jpg",
+        category: "teclado"
+    },
+    {
+        id: 8,
+        nombre: "Roland",
+        modelo: "Go 61k",
+        description:
+            "detalle de teclado.",
+        precio: 20000,
+        stock: 3,
+        image: "https://www.heavenimagenes.com/heavencommerce/c98a269a-2842-4da0-a6e5-e0e155d29966/images/v2/ROLAND/7051_medium.jpg",
+        category: "teclado"
+    },
+    {
+        id: 9,
+        nombre: "Fender",
+        modelo: "Bass Black",
+        description:
+            "detalle de bajo.",
+        precio: 10000,
+        stock: 3,
+        image: "https://101db.com.ar/10292-large_default/bajo-electrico-fender-player-precision-bass-black-mastil-maple.jpg",
+        category: "bajo"
+    },
+    {
+        id: 10,
+        nombre: "Fender",
+        modelo: "Telecaster",
+        description:
+            "detalle de guitarra.",
+        precio: 12000,
+        stock: 3,
+        image: "https://compasuno.com.ar/wp-content/uploads/2021/12/D_606516-MLA42458502390_072020-F-600x600.jpg",
+        category: "guitarra"
+    },
+    {
+        id: 11,
+        nombre: "PRS",
+        modelo: "Custom mod24",
+        description:
+            "detalle de guitarra.",
+        precio: 12000,
+        stock: 3,
+        image: "https://lh3.googleusercontent.com/proxy/uYE7xEEujs7lRrJU92MGVzv9l3i-u578mjHsyFobEeDjn1agXm6Vt1wrAEnOblqAthFSyUInmrRIOY8vwtrvntYBG19Q-G1h8rwFQVyM0D5tsNRPxTj_COkj01Sn-UqkNVLxxZKBWCZX-S7zS-jrFnS0_tMTsLq7SjQ",
+        category: "guitarra"
+    },
+    {
+        id: 12,
+        nombre: "Jackson",
+        modelo: "JS12",
+        description:
+            "detalle de guitarra.",
+        precio: 12000,
+        stock: 3,
+        image: "",
+        category: "guitarra"
+    },
 ]
 
 const categories = [
@@ -95,6 +160,14 @@ export const getCategories = () => {
     return new Promise((resolve, reject)=> {
         setTimeout(()=>{
             resolve(categories)
+        }, 1000);
+    });
+};
+
+export const getProductsId = (id) => {
+    return new Promise((resolve, reject)=> {
+        setTimeout(()=>{
+            resolve(products[id-1])
         }, 1000);
     });
 };
