@@ -1,7 +1,12 @@
 import styles from "./ItemDetail.module.scss"
+import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = ({ item }) => {
         const {nombre, precio, image, description, modelo} = item;
+
+        const onAdd = (count) => {
+            console.log(`Agregaste ${count} ${nombre} ${modelo} al carrito`)
+        }
     
     return (
         <div className={styles.parent}>
@@ -15,7 +20,9 @@ const ItemDetail = ({ item }) => {
                     <p className={styles.item__info__description}> {description} </p>
                     <p className={styles.item__info__precio}> ${precio} </p>
                 </div>
+                
             </div>
+            <ItemCount onAdd={onAdd}/>
         </div>
     )
 }
