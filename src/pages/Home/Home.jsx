@@ -5,10 +5,9 @@ import ItemListContainer from "../../components/ItemListContainer/ItemListContai
 const Home = () => {
     return (
         <Dashboard>
-            {/* <div>Esto es Home</div> */}
             {<ItemListContainer></ItemListContainer>}
         </Dashboard>
-            );
+    );
 };
 
 export default Home

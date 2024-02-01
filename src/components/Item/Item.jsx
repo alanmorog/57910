@@ -1,7 +1,13 @@
 import React from "react";
-import styles from './Item.module.scss'
+import styles from './Item.module.scss';
+import { Link } from "react-router-dom";
 
 const Item = ({id, nombre, modelo , description, precio, stock, image}) => {
+    if (image == ""){
+        image = "https://us.123rf.com/450wm/momoforsale/momoforsale2105/momoforsale210500063/169348832-no-hay-se%C3%B1al-disponible-de-imagen-aislada-en-la-ilustraci%C3%B3n-de-vector-de-fondo-blanco.jpg"
+        
+    }
+    console.log(image);
     return (
         <div className={styles.item}>
             <div className={styles.itemImg}>
@@ -13,7 +19,7 @@ const Item = ({id, nombre, modelo , description, precio, stock, image}) => {
                 {/* <p className={styles.item__info__description}>{description}</p> */}
                 <p className={styles.item__info__precio}>${precio}</p>
                 {/* <p className={styles.item__info__stock}> Stock: {stock}</p> */}
-                <button className={styles.item__info__button}>Ver Más</button>
+                <Link to={`/product/${id}`} className={styles.item__info__Link}>Ver Más</Link>
             </div>
         </div>
     )
