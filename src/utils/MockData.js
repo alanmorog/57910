@@ -117,7 +117,7 @@ const products = [
             "detalle de guitarra.",
         precio: 12000,
         stock: 3,
-        image: "https://lh3.googleusercontent.com/proxy/uYE7xEEujs7lRrJU92MGVzv9l3i-u578mjHsyFobEeDjn1agXm6Vt1wrAEnOblqAthFSyUInmrRIOY8vwtrvntYBG19Q-G1h8rwFQVyM0D5tsNRPxTj_COkj01Sn-UqkNVLxxZKBWCZX-S7zS-jrFnS0_tMTsLq7SjQ",
+        image: "https://compasuno.com.ar/wp-content/uploads/2022/09/D_645262-MLA48961712165_012022-F-1-600x600.jpg",
         category: "guitarra"
     },
     {
