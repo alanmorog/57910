@@ -5,7 +5,7 @@ import { useCartContext } from "../../routing/context/cartContext"
 const CartWidget = () => {
     const {itemsTotal} = useCartContext()
     return (
-        <div className={styles.cartwidget}>
+        <div>
             <img src={cartwidget} alt="cart-widget"/>
             <p>{itemsTotal}</p>
         </div>
