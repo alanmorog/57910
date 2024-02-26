@@ -1,4 +1,4 @@
-import styles from "./CartWidget.module.scss"
+
 import cartwidget from "./assets/cartwidget.svg"
 import { useCartContext } from "../../routing/context/cartContext"
 
