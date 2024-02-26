@@ -1,10 +1,13 @@
+import styles from "./cartwidget.module.scss"
 import cartwidget from "./assets/cartwidget.svg"
+import { useCartContext } from "../../routing/context/cartContext"
 
-function CartWidget () {
+const CartWidget = () => {
+    const {itemsTotal} = useCartContext()
     return (
-        <div>
-            <img src={cartwidget} alt="cart-widget" />
-            0
+        <div className={styles.cartwidget}>
+            <img src={cartwidget} alt="cart-widget"/>
+            <p>{itemsTotal}</p>
         </div>
     )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 /* import ItemListContainer from '../ItemListContainer/ItemListContainer'; */
 
-const ItemCount = ({ onAdd}) => {
+const ItemCount = ({ onAdd, onDelete}) => {
     const [count, setCount] = useState(1)
 
 

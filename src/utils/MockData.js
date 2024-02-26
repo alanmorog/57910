@@ -152,7 +152,7 @@ export const getProducts = () => {
     return new Promise((resolve, reject)=> {
         setTimeout(()=>{
             resolve(products)
-        }, 1000);
+        }, 1500);
     });
 };
 
@@ -160,7 +160,7 @@ export const getCategories = () => {
     return new Promise((resolve, reject)=> {
         setTimeout(()=>{
             resolve(categories)
-        }, 1000);
+        }, 1500);
     });
 };
 
@@ -168,6 +168,6 @@ export const getProductsId = (id) => {
     return new Promise((resolve, reject)=> {
         setTimeout(()=>{
             resolve(products[id-1])
-        }, 1000);
+        }, 1500);
     });
 };

@@ -18,6 +18,8 @@ const NavBar = () => {
         })
     }, [categories])
 
+
+
     return (
         <div className={styles.navbar}>
             <Link to='/' className={styles.logo}>
@@ -34,7 +36,7 @@ const NavBar = () => {
                 ))}
             </div>
             <div>
-                <CartWidget>0</CartWidget>
+                <CartWidget/>
             </div>
         </div>
     )
