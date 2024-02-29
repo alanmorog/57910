@@ -5,6 +5,7 @@ import PageNotFound from '../PageNotFound/PageNotFound'
 import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'
 import PrivateRoute from '../../routing/context/PrivateRoute'
 import CartProvider from "../../routing/context/cartContext"
+import Cart from "../Cart/Cart"
 
 
 const Dashboard = ({ children }) => {
@@ -16,9 +17,10 @@ const Dashboard = ({ children }) => {
                     <Route path="/" element={children} />
                     <Route path="/products" element={children} />
                     <Route path="/products/teclado" element={<PrivateRoute/>} >
-                    <Route path="/products/teclado" element={children} />
+                        <Route path="/products/teclado" element={children} />
                     </Route>
                     <Route path="/products/:categoryId" element={children} />
+                    <Route path="/products/cart" element={<Cart/>} />
                     <Route path="/product/:productId" element={<ItemDetailContainer></ItemDetailContainer>} />
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>

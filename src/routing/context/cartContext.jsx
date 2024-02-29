@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState, useEffect } from "react"
 
 const cartContext = createContext()
 
@@ -10,15 +10,14 @@ export const useCartContext = () => useContext(cartContext)
 const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
     const [itemsTotal, setItemsTotal] = useState(0) //cantidad de items que va a tener el carrito
-
     const [total, setTotal] = useState(0)
 
     const addItem = (item, quantity) => {
         setItemsTotal(itemsTotal + quantity)
         setTotal(total + item.precio * quantity)
-        if (isInCart(item.id)){
+        if (isInCart(item.cod)){
             const newCart = cart.map((cartItem) => {
-                if (cartItem.item.id === item.id) {
+                if (cartItem.item.cod === item.cod) {
                     return { ...cartItem, quantity: cartItem.quantity + quantity }
                 } else {
                     return cartItem
@@ -30,10 +29,16 @@ const CartProvider = ({ children }) => {
         }
     }
 
-    const isInCart = (id) => cart.find((item) => item.item.id === id)
 
+    const clearCart = () => {
+        setCart([]);
+        setItemsTotal(0);
+        setTotal(0);
+    }
 
-    const valorDelContexto = { cart, itemsTotal, addItem}
+    const isInCart = (cod) => cart.find((item) => item.item.cod === cod)
+
+    const valorDelContexto = { cart, setCart, itemsTotal, addItem, total, setTotal ,clearCart,setItemsTotal}
 
 
     return <Provider value={valorDelContexto}> {children} </Provider>

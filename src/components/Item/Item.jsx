@@ -7,7 +7,6 @@ const Item = ({id, nombre, modelo , description, precio, stock, image}) => {
         image = "https://us.123rf.com/450wm/momoforsale/momoforsale2105/momoforsale210500063/169348832-no-hay-se%C3%B1al-disponible-de-imagen-aislada-en-la-ilustraci%C3%B3n-de-vector-de-fondo-blanco.jpg"
         
     }
-    console.log(image);
     return (
         <div className={styles.item}>
             <div className={styles.itemImg}>

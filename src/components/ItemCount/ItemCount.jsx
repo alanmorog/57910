@@ -1,14 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
-/* import ItemListContainer from '../ItemListContainer/ItemListContainer'; */
 
-const ItemCount = ({ onAdd, onDelete}) => {
+const ItemCount = ({ onAdd}) => {
     const [count, setCount] = useState(1)
 
 
     const onChangeHandler = (event) => {
         setCount(Number(event.target.value))
     }
+    
     return (
         <div>
             <div>

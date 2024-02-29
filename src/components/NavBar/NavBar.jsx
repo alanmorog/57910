@@ -5,7 +5,7 @@ import styles from "./NavBar.module.scss"
 import { Link } from "react-router-dom"
 import  {getProducts, getCategories}  from "../../utils/MockData"
 import React, { useEffect, useState } from "react";
-
+import Cart from ".././Cart/Cart"
 
 
 
@@ -36,7 +36,10 @@ const NavBar = () => {
                 ))}
             </div>
             <div>
+            <Link to='/products/cart'>
                 <CartWidget/>
+            </Link>
+                
             </div>
         </div>
     )

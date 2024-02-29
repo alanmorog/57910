@@ -1,6 +1,6 @@
-const products = [
+export const products = [
     {
-        id: 1,
+        cod: 1,
         nombre: "Fender",
         modelo: "Stratocaster",
         description:
@@ -11,7 +11,7 @@ const products = [
         category: "guitarra"
     },
     {
-        id: 2,
+        cod: 2,
         nombre: "Fender",
         modelo: "Squier",
         description:
@@ -22,18 +22,18 @@ const products = [
         category: "guitarra"
     },
     {
-        id: 3,
+        cod: 3,
         nombre: "Gibson",
         modelo: "Les Paul",
         description:
-            "La guitarra eléctrica Gibson Les Paul Standard 2018 en mojave burst brillante es la elección perfecta para los amantes de la música que buscan un instrumento de alta calidad y diseño clásico.",
+            "La guitarra eléctrica Gibson Les Paul Standard 2018 en mojave burst brillante es la elección perfecta para los amantes de la música que buscan un instrumento de alta calcodad y diseño clásico.",
         precio: 15000,
         stock: 1,
         image: "https://media.guitarcenter.com/is/image/MMGS7/L54489000002000-00-720x720.jpg",
         category: "guitarra"
     },
     {
-        id: 4,
+        cod: 4,
         nombre: "Ibanez",
         modelo: "Js Series Js3",
         description:
@@ -44,7 +44,7 @@ const products = [
         category: "bajo"
     },
     {
-        id: 5,
+        cod: 5,
         nombre: "Natal",
         modelo: "Natal5",
         description:
@@ -55,18 +55,18 @@ const products = [
         category: "bateria"
     },
     {
-        id: 6,
+        cod: 6,
         nombre: "Yamaha",
         modelo: "PRS Series",
         description:
-            "Yamaha es una marca que fabrica instrumentos de alta calidad combinando lo artesanal y tradicional con la última tecnología digital.",
+            "Yamaha es una marca que fabrica instrumentos de alta calcodad combinando lo artesanal y tradicional con la última tecnología digital.",
         precio: 15000,
         stock: 3,
         image: "https://http2.mlstatic.com/D_NQ_NP_659504-MLA46440505116_062021-O.webp",
         category: "teclado"
     },
     {
-        id: 7,
+        cod: 7,
         nombre: "Krorg",
         modelo: "Kross WorkStation",
         description:
@@ -77,7 +77,7 @@ const products = [
         category: "teclado"
     },
     {
-        id: 8,
+        cod: 8,
         nombre: "Roland",
         modelo: "Go 61k",
         description:
@@ -88,7 +88,7 @@ const products = [
         category: "teclado"
     },
     {
-        id: 9,
+        cod: 9,
         nombre: "Fender",
         modelo: "Bass Black",
         description:
@@ -99,7 +99,7 @@ const products = [
         category: "bajo"
     },
     {
-        id: 10,
+        cod: 10,
         nombre: "Fender",
         modelo: "Telecaster",
         description:
@@ -110,7 +110,7 @@ const products = [
         category: "guitarra"
     },
     {
-        id: 11,
+        cod: 11,
         nombre: "PRS",
         modelo: "Custom mod24",
         description:
@@ -121,7 +121,7 @@ const products = [
         category: "guitarra"
     },
     {
-        id: 12,
+        cod: 12,
         nombre: "Jackson",
         modelo: "JS12",
         description:
@@ -164,10 +164,10 @@ export const getCategories = () => {
     });
 };
 
-export const getProductsId = (id) => {
+export const getProductscod = (cod) => {
     return new Promise((resolve, reject)=> {
         setTimeout(()=>{
-            resolve(products[id-1])
+            resolve(products[cod-1])
         }, 1500);
     });
 };
