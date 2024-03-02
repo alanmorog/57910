@@ -1,33 +1,38 @@
 import { useEffect, useState } from "react"
-import {useParams} from "react-router-dom"
+import { useParams } from "react-router-dom"
 import ItemDetail from "../ItemDetail/ItemDetail"
-/* import { getProductsId } from "../../utils/MockData" */
 import Spinner from "../Spinner/Spinner"
 
-import {db} from "../../firebase/config" 
-import {collection, doc, getDoc} from "firebase/firestore"
+import { db } from "../../firebase/config"
+import { collection, doc, getDoc } from "firebase/firestore"
 
 
 
 const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true)
     const [item, setItems] = useState()
-    const { productId} = useParams()
+    const { productId } = useParams()
 
-    useEffect(()=> {
+    useEffect(() => {
         const productsCollection = collection(db, "products")
         const refDoc = doc(productsCollection, productId)
         getDoc(refDoc)
-            .then((doc) =>{
-                setItems({...doc.data() })
+            .then((doc) => {
+                setItems({ ...doc.data() })
             })
-            .catch((error) =>{
-                console.log("Error Getting Document", error)
+            .catch((error) => {
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    showConfirmButton: false,
+                    timer: 1000,
+                    title: error
+                });
             })
-            setLoading(false)
+        setLoading(false)
 
-    }, [productId]) 
-    return loading ? <Spinner/> : <ItemDetail item={ item } />
+    }, [productId])
+    return loading ? <Spinner /> : <ItemDetail item={item} />
 }
 
 export default ItemDetailContainer

@@ -15,9 +15,7 @@ const Item = ({id, nombre, modelo , description, precio, stock, image}) => {
             <div className={styles.item__info}>
                 <h2 className={styles.item__info__title}>{nombre}</h2>
                 <h3 className={styles.item__info__modelo}>{modelo}</h3>
-                {/* <p className={styles.item__info__description}>{description}</p> */}
                 <p className={styles.item__info__precio}>${precio}</p>
-                {/* <p className={styles.item__info__stock}> Stock: {stock}</p> */}
                 <Link to={`/product/${id}`} className={styles.item__info__Link}>Ver Más</Link>
             </div>
         </div>
