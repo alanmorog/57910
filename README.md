@@ -1,8 +1,36 @@
-# React + Vite
+# Proyecto Final React Js Comision 57910
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción del Proyecto
 
-Currently, two official plugins are available:
+El proyecto se trata de un eCommerce con temátia de tienda de instrumentos musicales.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Tiene un apartado de Home, mas las categorias pre seleccionadas segun el tipo de categorias cargados desde la base de datos. Al seleccionar un item se ira a un apartado con mas detalles sobre el producto con opciones de agregar carrito y la cantidad de a agregar.
+
+Se tiene un apartado de carrito que recibe informacion del Hook y la envia al finalizar la compra a la base de datos FireBase para su posterior devolcion de ID ingresado.
+
+## Ejecutar el proyecto localmente
+
+El proyecto fue realizado con vite, se debe realizar la descargar del repositorio desde [mi repositorio](https://github.com/alanmorog/57910.github.io)
+
+```bash
+  npm  run dev
+```
+
+
+## Link de Netlify
+
+[Link de netlify](https://57910.netlify.app/)
+
+
+
+
+## Dependencias
+
+las dependencias que utilice en el proyecto:
+
+- React
+- React DOM
+- React-router-dom 
+- Sass 
+- Sweetalert2
+
