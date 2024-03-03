@@ -9,6 +9,9 @@ import { db } from "../../firebase/config"
 
 const Cart = () => {
     const { cart, total, clearCart, itemsTotal, setCart, setItemsTotal, setTotal } = useCartContext();
+    const [ordenSend, setOrdenSend] = useState("");
+    const [saveCart, setSaveCart] = useState([{ productos: cart }]);
+    const [saveTotal, setSaveTotal] = useState([{ total: total }]);
 
     const limpiarCart = () => {
         clearCart();
@@ -23,14 +26,11 @@ const Cart = () => {
     }
 
     const FinalizaCompra = () => {
-        const ordenCompra = {
-            productos: cart,
-            total: total
-        }
+        const ordenCompra = { productos: cart, total: total }
         const ordenesRef = collection(db, "ordenes")
         addDoc(ordenesRef, ordenCompra)
             .then((doc) => {
-                alert("numero de orden", doc.id)
+                setOrdenSend(doc.id)
             })
         Swal.fire({
             position: "center",
@@ -39,8 +39,38 @@ const Cart = () => {
             showConfirmButton: false,
             timer: 1000
         });
-
         clearCart();
+    }
+
+    if (ordenSend) {
+        return (
+            <div className={styles.cart__estilo__}>
+                <h1>Se realizo con exito la compra!!</h1>
+                <p>Tu número de orden es: {ordenSend}</p>
+                {
+                    saveCart.map((prod) => (
+                        prod.productos.map((arch) => (
+                            (
+                                <div key={arch.item.cod}>
+                                    <h2>Categoria: {arch.item.category}</h2>
+                                    <h3>Cantidad: {arch.quantity}</h3>
+                                    <h4>Nombre: {arch.item.nombre}</h4>
+                                    <p>Modelo: {arch.item.modelo}</p>
+                                </div>
+                            )
+                        ))
+                    ))
+                }
+                {
+                    saveTotal.map((total, index) => (
+                        <div key={index}>
+                            <h2>Total: ${total.total}</h2>
+                        </div>
+                        
+                    ))
+                }
+            </div>
+        )
     }
 
     return (
@@ -57,7 +87,6 @@ const Cart = () => {
                         <button onClick={() => clearItemCart(products.item.cod, products.quantity, products.item.precio)}>Borrar Articulo</button>
                     </div>
                 ))
-
             }
             {cart.length > 0 ?
                 <div className={styles.cart__estilo__total}>
@@ -65,7 +94,7 @@ const Cart = () => {
                     <h3>El total es: ${total}</h3>
                     <button onClick={FinalizaCompra}>finalizar Compra</button>
                 </div> :
-                <h3>El carito se encuentra vacío</h3>
+                <h3>El carito se encuentra vacío </h3>
             }
 
         </div>

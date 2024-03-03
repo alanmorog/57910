@@ -62,3 +62,18 @@
 .cart__estilo__total{
     display: flex;
 }
+
+.cart__estilo__{
+    h1 {
+        color: red;
+        text-shadow: 2px 2px 2px #000;
+    }
+    text-align: center;
+    background-color: rgb(183, 177, 177);
+    font-size: 15px;
+    font-family: sans-serif;
+    p {
+        border-bottom: 1px solid black;
+    }
+    
+}

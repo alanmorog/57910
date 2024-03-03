@@ -3,7 +3,6 @@ import Spinner from "../Spinner/Spinner"
 import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom"
-/* import { getProducts } from "../../utils/MockData"; */
 import { db } from "../../firebase/config"
 import { collection, query, where, getDocs } from "firebase/firestore"
 
@@ -27,7 +26,6 @@ const ItemListContainer = ({ }) => {
                 where("category", "==", categoryId)
             )
             getDocs(queryCollection).then(({ docs }) => {
-                console.log("docs filtered by category")
                 const products = docs.map((doc) => ({
                     id: doc.id,
                     ...doc.data(),
@@ -37,7 +35,6 @@ const ItemListContainer = ({ }) => {
             })
         } else {
             getDocs(productsCollection).then(({ docs }) => {
-                console.log("docs no filtedered by category")
                 const products = docs.map((doc) => ({
                     id: doc.id,
                     ...doc.data(),
