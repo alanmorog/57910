@@ -46,7 +46,7 @@ const Cart = () => {
         return (
             <div className={styles.cart__estilo__}>
                 <h1>Se realizo con exito la compra!!</h1>
-                <p>Tu número de orden es: {ordenSend}</p>
+                <p>Tu  orden es: {ordenSend}</p>
                 {
                     saveCart.map((prod) => (
                         prod.productos.map((arch) => (
